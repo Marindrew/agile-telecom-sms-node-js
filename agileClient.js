@@ -53,6 +53,7 @@ function AgileClient(_username, _password, callback, debug) {
 //				file.uni to send a text SMS with UNICODE
 // deliveryIndex - optional field used to identify the message while receiving delivery notifications.
 // text - required text of sms (maximum 160 char)
+// notSecure - optional boolean parameter to use HTTP POST API instead of HTTPS POST API. 
 
 AgileClient.prototype.sendSms = function (options, callback) {
 	//Validating options
@@ -110,12 +111,13 @@ AgileClient.prototype.sendSms = function (options, callback) {
 	if(this.debug)
 		console.log(formValues);
 	
-	request.post({url:agileEndPointNotSecure, form: formValues}, function(err,httpResponse,body){ 
+	request.post({url:options.notSecure?agileEndPointNotSecure:agileEndPointSecure, form: formValues}, function(err,httpResponse,body){ 
 		if(err) {
 			if(callback)
 				callback([that.error("connectionError")], null);
 		} else {
-			console.log(body);
+			if(this.debug)
+				console.log(body);
 			if(body.indexOf("Ok")!==-1 || body.indexOf("OK")!==-1) {
 				if(callback)
 					callback(null, {success: true});

@@ -7,8 +7,9 @@ var agileClient = new AgileClient("test", "test", function(err, result) {
 			toPhoneNumber: "+447955585777",
 			text: "this is test message",
 			gatewayQuality: result.client.gatewayQualityHigh,
+			notSecure: true
 		}, function(_err, _result) {
-			
+			console.log(_err, _result);
 		});
 	}
 });
