@@ -1,9 +1,12 @@
 var request = require("request");
 
+var agileEndPointSecure = "https://secure.agiletelecom.com/securesend_v1.aspx";
+var agileEndPointNotSecure = "http://post.agiletelecom.com/smshurricane3.0.asp";
 
 function AgileClient(_username, _password, callback, debug) {
 	var username = _username;
 	var password = _password;
+	
 	if(debug && debug===true)
 		this.debug = true;
 	else
@@ -107,7 +110,7 @@ AgileClient.prototype.sendSms = function (options, callback) {
 	if(this.debug)
 		console.log(formValues);
 	
-	request.post({url:'http://post.agiletelecom.com/smshurricane3.0.asp', form: formValues}, function(err,httpResponse,body){ 
+	request.post({url:agileEndPointNotSecure, form: formValues}, function(err,httpResponse,body){ 
 		if(err) {
 			if(callback)
 				callback([that.error("connectionError")], null);
