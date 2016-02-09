@@ -116,7 +116,7 @@ AgileClient.prototype.sendSms = function (options, callback) {
 			if(callback)
 				callback([that.error("connectionError")], null);
 		} else {
-			if(this.debug===true)
+			if(that.debug===true)
 				console.log(body);
 			if(body.indexOf("Ok")!==-1 || body.indexOf("OK")!==-1) {
 				if(callback)
