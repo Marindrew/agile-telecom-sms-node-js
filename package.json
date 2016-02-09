@@ -1,0 +1,27 @@
+{
+  "name": "agile-telecom-sms-node-js",
+  "version": "0.0.1",
+  "description": "This is node.js client for Agile Telecom HTTP POST API",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Marindrew/agile-telecom-sms-node-js.git"
+  },
+  "keywords": [
+    "Agile",
+    "Telecom",
+    "SMS"
+  ],
+  "author": "Andriy Marin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Marindrew/agile-telecom-sms-node-js/issues"
+  },
+  "homepage": "https://github.com/Marindrew/agile-telecom-sms-node-js",
+  "dependencies": {
+	  "request": "^2.64.0"
+  }
+}
