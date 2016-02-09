@@ -3,6 +3,17 @@
 This is library for sending SMS through Agile Telecom API.
 
 Get started:
+Run the commands
+```
+git init
+git remote add origin https://github.com/Marindrew/agile-telecom-sms-node-js
+git pull origin master
+npm install
+node test.js
+```
+
+Test example:
+
 ```
 var AgileClient = require("./agileClient");
 
