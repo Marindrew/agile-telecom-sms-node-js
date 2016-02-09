@@ -11,4 +11,4 @@ var agileClient = new AgileClient("test", "test", function(err, result) {
 			
 		});
 	}
-}, true);
+});
